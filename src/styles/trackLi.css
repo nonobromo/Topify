@@ -1,0 +1,56 @@
+.list-item {
+  width: 100%;
+  margin-top: 15px;
+  list-style-type: decimal-leading-zero;
+  color: white;
+  text-align: center;
+}
+
+li > div:hover {
+  background-color: rgb(50, 50, 50);
+  transition: 150ms;
+}
+
+li::marker {
+  font-size: 1.5rem;
+}
+
+img {
+  width: 50px;
+}
+
+.trackLi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: white;
+  margin: auto;
+}
+
+.trackLi-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tracks-li-container {
+  width: 50%;
+  margin: auto;
+  padding-bottom: 200px;
+}
+
+span:nth-child(1) {
+  text-align: center;
+}
+
+span:nth-child(2) {
+  color: #b6b6b6;
+}
+
+ol {
+  width: 100%;
+  margin: auto;
+  list-style-type: decimal;
+}
