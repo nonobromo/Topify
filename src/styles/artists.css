@@ -18,3 +18,9 @@
   text-align: center;
   align-items: center;
 }
+
+@media screen and (max-width: 1300px) {
+  .artists-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
