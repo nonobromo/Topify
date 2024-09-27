@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/auth.context";
 import { useSearch } from "../context/serach.context";
+import { Link, NavLink } from "react-router-dom";
 
 function Header({ setCurrentView }) {
   const { token, handleLogout, userInfo, HREF_LINK } = useAuth();
@@ -30,7 +31,9 @@ function Header({ setCurrentView }) {
                 />
 
                 <ul className={`menu nav-links ${isMenuOpen ? "open" : ""}`}>
-                  <li>{userInfo?.display_name}</li>
+                  <Link to="/">
+                    <li>{userInfo?.display_name}</li>
+                  </Link>
                   <li onClick={handleLogout}>Log out</li>
                 </ul>
               </div>
@@ -51,8 +54,13 @@ function Header({ setCurrentView }) {
               <ul
                 className={`menu nav-links ${statisticsIsOpen ? "open" : ""}`}
               >
-                <li onClick={() => setCurrentView("Tracks")}>Tracks</li>
-                <li onClick={() => setCurrentView("Artists")}>Artists</li>
+                <NavLink to="/top-tracks">
+                  {" "}
+                  <li onClick={() => setCurrentView("Tracks")}>Tracks</li>
+                </NavLink>
+                <NavLink to="/top-artists">
+                  <li onClick={() => setCurrentView("Artists")}>Artists</li>
+                </NavLink>
               </ul>
             </div>
           )}

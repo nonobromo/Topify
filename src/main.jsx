@@ -7,11 +7,14 @@ import "./styles/navbar.css";
 import SearchInput from "./context/serach.context.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./styles/artists.css";
+import { BrowserRouter } from "react-router-dom";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <UserAuth>
       <SearchInput>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </SearchInput>
     </UserAuth>
   </StrictMode>

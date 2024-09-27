@@ -1,16 +1,19 @@
 import { useState } from "react";
 import Header from "./components/header";
-import MainContnent from "./components/mainContent";
-import { useAuth } from "./context/auth.context";
+import MainContent from "./components/mainContent";
+import { Route, Routes } from "react-router-dom";
 import TopArtists from "./components/topArtists";
-function App() {
-  const [currentView, setCurrentView] = useState("Tracks");
 
+function App() {
+  const [currentView, setCurrnetView] = useState("Tracks");
   return (
     <div className="container">
-      <Header setCurrentView={setCurrentView} />
-      {currentView === "Tracks" && <MainContnent />}
-      {currentView === "Artists" && <TopArtists />}
+      <Header setCurrentView={setCurrnetView} />
+      <Routes>
+        <Route path="/" element={<MainContent />} />
+        <Route path="/top-tracks" element={<MainContent />} />
+        <Route path="/top-artists" element={<TopArtists />} />
+      </Routes>
     </div>
   );
 }
