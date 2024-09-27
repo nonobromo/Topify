@@ -55,9 +55,7 @@ function MainContnent() {
         <div>
           {showCase === "Grid" && <GridShowcase chooseTrack={chooseTrack} />}
           {showCase === "List" && <ListShowCase chooseTrack={chooseTrack} />}
-          <div>
-            <Player token={token} uri={playingTrack} />
-          </div>
+          <div>{/* <Player token={token} uri={playingTrack} /> */}</div>
         </div>
       )}
     </div>
