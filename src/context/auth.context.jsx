@@ -10,11 +10,13 @@ export const userData = createContext({
   userInfo: null,
   getTopArtists: () => {},
   artists: [],
+  limit: 25,
+  setLimit: () => {},
 });
 
 function UserAuth({ children }) {
   const CLIENT_ID = "476cc57365b648b3bd59a4cf35e96e4f";
-  const REDIRECT_URI = "https://spotify-kf6g.onrender.com";
+  const REDIRECT_URI = "http://localhost:5173/";
 
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
@@ -26,7 +28,9 @@ function UserAuth({ children }) {
   const [tracks, setTracks] = useState([]);
   const [userInfo, setUserInfo] = useState(null);
   const [artists, setArtists] = useState([]);
+  const [limit, setLimit] = useState(25);
 
+  console.log(limit);
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -54,7 +58,7 @@ function UserAuth({ children }) {
     if (token) {
       try {
         const response = await fetch(
-          "https://api.spotify.com/v1/me/top/tracks?limit=50",
+          `https://api.spotify.com/v1/me/top/tracks?limit=${limit}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -88,7 +92,7 @@ function UserAuth({ children }) {
       getData();
       getTopArtists();
     }
-  }, [token]);
+  }, [token, limit]);
 
   const getUserData = async () => {
     if (token) {
@@ -125,7 +129,7 @@ function UserAuth({ children }) {
     if (token) {
       try {
         const response = await fetch(
-          "https://api.spotify.com/v1/me/top/artists?limit=50",
+          `https://api.spotify.com/v1/me/top/artists?limit=${limit}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -171,6 +175,8 @@ function UserAuth({ children }) {
         userInfo,
         getTopArtists,
         artists,
+        setLimit,
+        limit,
       }}
     >
       {children}

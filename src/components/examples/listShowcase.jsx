@@ -2,7 +2,7 @@ import { useAuth } from "../../context/auth.context";
 import { useSearch } from "../../context/serach.context";
 import TrackLi from "../common/trackLi";
 
-function ListShowCase({ chooseTrack }) {
+function ListShowCase() {
   const { tracks } = useAuth();
   const { search } = useSearch();
   return (
@@ -23,7 +23,6 @@ function ListShowCase({ chooseTrack }) {
                 img={track.album.images[0].url}
                 trackNumber={i}
                 uri={track.uri}
-                chooseTrack={chooseTrack}
                 duration={track.duration_ms}
               />
             );

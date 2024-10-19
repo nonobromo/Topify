@@ -19,6 +19,11 @@
   align-items: center;
 }
 
+.artist > img {
+  width: 150px;
+  height: 150px;
+}
+
 @media screen and (max-width: 1300px) {
   .artists-container {
     grid-template-columns: repeat(1, 1fr);

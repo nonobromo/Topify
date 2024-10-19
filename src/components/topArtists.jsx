@@ -1,18 +1,34 @@
 import { useAuth } from "../context/auth.context";
+import { useSearch } from "../context/serach.context";
 import Artist from "./common/artist";
-
+import SetLimit from "./common/setLimit";
 function TopArtists() {
-  const { artists } = useAuth();
-
+  const { artists, limit, token } = useAuth();
+  const { search } = useSearch();
   return (
-    <div>
+    <>
       <h1>Top 50 Artists</h1>
-      <div className="artists-container">
-        {artists.map((artist) => {
-          return <Artist name={artist.name} img={artist.images[0].url} />;
-        })}
+      <div style={{ width: "75%", margin: "auto" }}>
+        {token && <SetLimit />}
+        <div className="artists-container">
+          {artists
+            .filter((item) => {
+              return search.toLowerCase() === ""
+                ? true
+                : item.name.toLowerCase().includes(search.toLowerCase());
+            })
+            .map((artist) => {
+              return (
+                <Artist
+                  name={artist.name}
+                  img={artist.images[0].url}
+                  key={artist.name}
+                />
+              );
+            })}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -45,7 +45,7 @@ span:nth-child(1) {
   text-align: center;
 }
 
-span:nth-child(2) {
+.artist-name {
   color: #b6b6b6;
 }
 

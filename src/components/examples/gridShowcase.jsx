@@ -2,7 +2,7 @@ import { useAuth } from "../../context/auth.context";
 import { useSearch } from "../../context/serach.context";
 import Track from "../common/track";
 
-function GridShowcase({ chooseTrack }) {
+function GridShowcase() {
   const { tracks } = useAuth();
   const { search } = useSearch();
   return (
@@ -22,7 +22,6 @@ function GridShowcase({ chooseTrack }) {
               img={track.album.images[0].url}
               trackNumber={i}
               uri={track.uri}
-              chooseTrack={chooseTrack}
               duration={track.duration_ms}
             />
           );

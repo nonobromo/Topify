@@ -1,16 +1,9 @@
 import { useState } from "react";
 import useTime from "../../hooks/useTime";
-function Track({
-  img,
-  trackName,
-  artistName,
-  trackNumber,
-  chooseTrack,
-  uri,
-  duration,
-}) {
+import { useTrack } from "../../context/trackPlay.context";
+function Track({ img, trackName, artistName, trackNumber, uri, duration }) {
   const [hover, setHover] = useState(false);
-
+  const { chooseTrack } = useTrack();
   return (
     <div className="song-container">
       <div className="track">

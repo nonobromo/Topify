@@ -1,13 +1,16 @@
 import "../../styles/trackLi.css";
 import useTime from "../../hooks/useTime";
-function TrackLi({ img, trackName, artistName, duration, chooseTrack, uri }) {
+import { useTrack } from "../../context/trackPlay.context";
+function TrackLi({ img, trackName, artistName, duration, uri }) {
+  const { chooseTrack } = useTrack();
+
   return (
     <li onClick={() => chooseTrack(uri)} className="list-item">
       <div className="trackLi">
         <img src={img} alt={trackName} />
         <div className="trackLi-info">
-          <span>{trackName}</span>
-          <span>{artistName}</span>
+          <span className="track-name">{trackName}</span>
+          <span className="artist-name">{artistName}</span>
         </div>
         <span>{useTime(duration)}</span>
       </div>

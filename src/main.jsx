@@ -8,14 +8,18 @@ import SearchInput from "./context/serach.context.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./styles/artists.css";
 import { BrowserRouter } from "react-router-dom";
+import PlayingTrack from "./context/trackPlay.context.jsx";
+import "./styles/miscStyles.css";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <UserAuth>
-      <SearchInput>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </SearchInput>
+      <PlayingTrack>
+        <SearchInput>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </SearchInput>
+      </PlayingTrack>
     </UserAuth>
   </StrictMode>
 );
