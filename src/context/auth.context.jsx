@@ -29,8 +29,6 @@ function UserAuth({ children }) {
   const [userInfo, setUserInfo] = useState(null);
   const [artists, setArtists] = useState([]);
   const [limit, setLimit] = useState(25);
-
-  console.log(limit);
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");

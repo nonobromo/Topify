@@ -1,9 +1,7 @@
 function ViewStyle({ setShowcase, showCase }) {
   return (
-    <>
-      <span style={{ marginTop: "40px", display: "block" }}>
-        View As : {showCase}
-      </span>
+    <div className="viewStyle-container">
+      <span>View As : {showCase}</span>
       <ul className="view-style">
         <li className="icon-hover">
           <i
@@ -18,7 +16,7 @@ function ViewStyle({ setShowcase, showCase }) {
           ></i>
         </li>
       </ul>
-    </>
+    </div>
   );
 }
 
