@@ -11,7 +11,7 @@ function SetLimit() {
           onChange={(e) => setLimit(e.target.value)}
           className="limit-select"
         >
-          <option defaultValue={true} disabled="disabled"></option>
+          <option defaultValue={true}></option>
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="25">25</option>

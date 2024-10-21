@@ -21,7 +21,7 @@ function UserAuth({ children }) {
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
-  const HREF_LINK = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=streaming%20user-read-email%20user-read-private%20user-read-playback-state%20user-modify-playback-state%20user-top-read`;
+  const HREF_LINK = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=streaming%20user-read-email%20user-read-private%20user-read-playback-state%20user-modify-playback-state%20user-top-read%20user-read-recently-played`;
 
   const [token, setToken] = useState("");
   const [error, setError] = useState(null);
@@ -29,6 +29,7 @@ function UserAuth({ children }) {
   const [userInfo, setUserInfo] = useState(null);
   const [artists, setArtists] = useState([]);
   const [limit, setLimit] = useState(25);
+
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -82,6 +83,7 @@ function UserAuth({ children }) {
         console.error("Error fetching data:", error);
       }
     }
+    return tracks;
   };
 
   useEffect(() => {
