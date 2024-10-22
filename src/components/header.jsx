@@ -20,6 +20,9 @@ function Header({ setCurrentView }) {
   return (
     <header>
       <nav className="navbar">
+        {/* <span style={{ fontSize: "1.5rem", marginRight: 20 }}>
+          Topfi <i className="bi bi-arrow-90deg-up"></i>
+        </span> */}
         <div className="navbar-content">
           {token ? (
             <>

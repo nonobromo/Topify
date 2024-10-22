@@ -12,6 +12,8 @@ export const userData = createContext({
   artists: [],
   limit: 25,
   setLimit: () => {},
+  term: "medium_term",
+  setTerm: () => {},
 });
 
 function UserAuth({ children }) {
@@ -29,6 +31,7 @@ function UserAuth({ children }) {
   const [userInfo, setUserInfo] = useState(null);
   const [artists, setArtists] = useState([]);
   const [limit, setLimit] = useState(25);
+  const [term, setTerm] = useState("medium_term");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -57,7 +60,7 @@ function UserAuth({ children }) {
     if (token) {
       try {
         const response = await fetch(
-          `https://api.spotify.com/v1/me/top/tracks?limit=${limit}`,
+          `https://api.spotify.com/v1/me/top/tracks?time_range=${term}&limit=${limit}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -92,7 +95,7 @@ function UserAuth({ children }) {
       getData();
       getTopArtists();
     }
-  }, [token, limit]);
+  }, [token, limit, term]);
 
   const getUserData = async () => {
     if (token) {
@@ -129,7 +132,7 @@ function UserAuth({ children }) {
     if (token) {
       try {
         const response = await fetch(
-          `https://api.spotify.com/v1/me/top/artists?limit=${limit}`,
+          `https://api.spotify.com/v1/me/top/artists?time_range=${term}&limit=${limit}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -177,6 +180,8 @@ function UserAuth({ children }) {
         artists,
         setLimit,
         limit,
+        term,
+        setTerm,
       }}
     >
       {children}

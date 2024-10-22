@@ -5,6 +5,7 @@ import Track from "../common/track";
 function GridShowcase() {
   const { tracks } = useAuth();
   const { search } = useSearch();
+
   return (
     <div className="tracks-container">
       {tracks
@@ -16,7 +17,7 @@ function GridShowcase() {
         .map((track, i) => {
           return (
             <Track
-              key={track.name}
+              key={track.id}
               trackName={track.name}
               artistName={track.artists[0].name}
               img={track.album.images[0].url}

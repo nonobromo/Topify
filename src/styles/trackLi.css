@@ -13,6 +13,7 @@ li > div:hover {
 
 li::marker {
   font-size: 1.5rem;
+  text-align: left;
 }
 
 img {
@@ -36,7 +37,7 @@ img {
 }
 
 .tracks-li-container {
-  width: 50%;
+  width: 75%;
   margin: auto;
   padding-bottom: 200px;
 }

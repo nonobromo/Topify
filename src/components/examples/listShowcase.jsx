@@ -17,7 +17,7 @@ function ListShowCase() {
           .map((track, i) => {
             return (
               <TrackLi
-                key={track.name}
+                key={track.id}
                 trackName={track.name}
                 artistName={track.artists[0].name}
                 img={track.album.images[0].url}

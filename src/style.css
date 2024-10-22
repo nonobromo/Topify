@@ -37,13 +37,23 @@ span {
   color: #fff;
 }
 
-.top-container {
+.showcase-options {
   width: 75%;
   margin: auto;
-  color: #fff;
+  display: flex;
+  align-items: start;
+  margin-top: 80px;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.showcase-options-unreversed {
+  width: 75%;
+  margin: auto;
   display: flex;
   align-items: center;
   margin-top: 80px;
+  justify-content: space-between;
 }
 
 .song-container {
@@ -72,12 +82,11 @@ span {
   margin-top: 120px;
   width: 75%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 200px);
+  justify-content: space-between;
   gap: 30px;
-  padding: 16px;
   box-sizing: border-box;
   justify-items: center;
-  align-items: start;
   margin: auto;
   padding-bottom: 150px;
 }
@@ -96,60 +105,25 @@ span {
   height: 80px;
 }
 
-.icon-hover {
-  color: #8f8f8f;
-  cursor: pointer;
-}
-
-.icon-hover:hover {
-  color: rgba(238, 238, 238, 0.801);
-  transition: 400ms;
-  border-radius: 100%;
-}
-
-.set-limit {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 250px;
-}
-
-.set-limit-in {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-}
-
-.limit-num {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.viewStyle-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
-}
-
-.view-style {
-  display: flex;
-  justify-content: space-between;
-  width: 100px;
-  list-style-type: none;
-  font-size: 1.5rem;
-}
-
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   h1 {
     margin-top: 100px;
   }
   .tracks-container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .top-container {
+  .showcase-options {
     width: 90%;
+  }
+
+  .showcase-options-unreversed {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .tracks-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
