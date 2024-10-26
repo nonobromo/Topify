@@ -33,18 +33,28 @@ h3 {
   color: #b6b6b6;
 }
 
-span {
-  color: #fff;
-}
-
 .showcase-options {
-  width: 75%;
+  width: 100%;
   margin: auto;
   display: flex;
   align-items: start;
   margin-top: 80px;
   justify-content: space-between;
   flex-direction: row-reverse;
+}
+
+.showcase-options-right {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.showcase-options-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
 .showcase-options-unreversed {
@@ -80,7 +90,7 @@ span {
 
 .tracks-container {
   margin-top: 120px;
-  width: 75%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 200px);
   justify-content: space-between;
@@ -89,6 +99,7 @@ span {
   justify-items: center;
   margin: auto;
   padding-bottom: 150px;
+  margin-top: 10px;
 }
 
 .player-footer {
@@ -115,6 +126,7 @@ span {
 
   .showcase-options {
     width: 90%;
+    flex-direction: column;
   }
 
   .showcase-options-unreversed {

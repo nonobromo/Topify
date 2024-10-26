@@ -1,7 +1,7 @@
 import "../../styles/trackLi.css";
 import useTime from "../../hooks/useTime";
 import { useTrack } from "../../context/trackPlay.context";
-function TrackLi({ img, trackName, artistName, duration, uri }) {
+function TrackLi({ img, trackName, artistName, duration, uri, trackAlbum }) {
   const { chooseTrack } = useTrack();
 
   return (
@@ -12,7 +12,7 @@ function TrackLi({ img, trackName, artistName, duration, uri }) {
           <span className="track-name">{trackName}</span>
           <span className="artist-name">{artistName}</span>
         </div>
-        <span>{useTime(duration)}</span>
+        <span className="hide-item">{useTime(duration)}</span>
       </div>
     </li>
   );

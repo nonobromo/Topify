@@ -34,7 +34,7 @@ function Track({ img, trackName, artistName, trackNumber, uri, duration }) {
 
         <h2>{trackName}</h2>
         <h3>{artistName}</h3>
-        <span>{useTime(duration)}</span>
+        <span style={{ color: "white" }}>{useTime(duration)}</span>
       </div>
     </div>
   );

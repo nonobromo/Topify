@@ -8,13 +8,15 @@ import ListShowCase from "./examples/listShowcase";
 function TopTracks({ setShowcase, showCase }) {
   const { token } = useAuth();
   return (
-    <div className="">
+    <div style={{ width: "75%", margin: "auto" }}>
       <h1>Top Tracks</h1>
       <div className="showcase-options">
-        {token && <ViewStyle setShowcase={setShowcase} showCase={showCase} />}
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          {token && <SetLimit setShowcase={setShowcase} showCase={showCase} />}
+        <div className="showcase-options-right">
+          {token && <ViewStyle setShowcase={setShowcase} showCase={showCase} />}
           {token && token && <TimeRange />}
+        </div>
+        <div className="showcase-options-left">
+          {token && <SetLimit setShowcase={setShowcase} showCase={showCase} />}
         </div>
       </div>
 

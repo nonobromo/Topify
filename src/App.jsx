@@ -7,6 +7,7 @@ import { useAuth } from "./context/auth.context";
 import Player from "./components/common/player";
 import { useTrack } from "./context/trackPlay.context";
 import TopTracks from "./components/topTracks";
+import YearSort from "./components/sortTracksByYear";
 
 function App() {
   const { token } = useAuth();
@@ -18,7 +19,10 @@ function App() {
     <div className="container">
       <Header setCurrentView={setCurrnetView} />
       <Routes>
-        <Route path="/" element={<MainContent />} />
+        <Route
+          path="/"
+          element={<TopTracks showCase={showCase} setShowcase={setShowcase} />}
+        />
         {token && (
           <Route
             path="/top-tracks"
@@ -28,6 +32,7 @@ function App() {
           />
         )}
         {token && <Route path="/top-artists" element={<TopArtists />} />}
+        {token && <Route path="/by-the-years" element={<YearSort />} />}
       </Routes>
       {token && <div>{<Player token={token} uri={playingTrack} />}</div>}
     </div>

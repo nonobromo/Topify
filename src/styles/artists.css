@@ -1,6 +1,6 @@
 .artists-container {
   margin-top: 120px;
-  width: 75%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 150px);
   justify-content: space-between;

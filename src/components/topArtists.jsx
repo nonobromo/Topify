@@ -8,9 +8,9 @@ function TopArtists() {
   const { search } = useSearch();
   return (
     <>
-      <h1>Top 50 Artists</h1>
-      <div>
-        <div className="showcase-options-unreversed">
+      <h1>Top Artists</h1>
+      <div style={{ width: "75%", margin: "auto" }}>
+        <div className="showcase-options">
           {token && <TimeRange />}
           {token && <SetLimit />}
         </div>

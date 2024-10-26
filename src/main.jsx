@@ -11,6 +11,7 @@ import { BrowserRouter } from "react-router-dom";
 import PlayingTrack from "./context/trackPlay.context.jsx";
 import "./styles/miscStyles.css";
 import "./styles/yearList.css";
+import "./styles/navbar-hamburger.css";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <UserAuth>

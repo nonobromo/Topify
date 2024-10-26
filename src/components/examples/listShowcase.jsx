@@ -7,6 +7,13 @@ function ListShowCase() {
   const { search } = useSearch();
   return (
     <div className="tracks-li-container">
+      <div className="table-row-top" style={{ color: "white" }}>
+        <span>#</span>
+        <span>Title</span>
+        <span>
+          <i className="bi bi-clock hide-item"></i>
+        </span>
+      </div>
       <ol>
         {tracks
           .filter((item) => {
@@ -24,6 +31,7 @@ function ListShowCase() {
                 trackNumber={i}
                 uri={track.uri}
                 duration={track.duration_ms}
+                trackAlbum={track.album.name}
               />
             );
           })}

@@ -2,35 +2,16 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/auth.context";
 import TrackLi from "./common/trackLi";
 import SetLimit from "./common/setLimit";
+import useSort from "../hooks/useSort";
+import TimeRange from "./common/timeRange";
 
 function YearSort() {
   const { tracks, token } = useAuth();
-
-  const [newTracks, setNewTracks] = useState([]);
   const [isReversed, setIsReversed] = useState(false);
-  function evalMusic() {
-    const tracksByYear = tracks.reduce((acc, item) => {
-      const year = new Date(item.album.release_date).getFullYear();
-
-      if (!acc[year]) {
-        acc[year] = [];
-      }
-
-      acc[year].push(item);
-
-      return acc;
-    }, {});
-
-    const groupedTracks = Object.keys(tracksByYear).map((year) => ({
-      year,
-      tracks: tracksByYear[year],
-    }));
-
-    setNewTracks(groupedTracks);
-  }
+  const { newTracks, evalMusic } = useSort();
 
   useEffect(() => {
-    evalMusic();
+    evalMusic(tracks);
   }, [token, tracks]);
 
   const toggleOrder = () => {
@@ -41,11 +22,16 @@ function YearSort() {
 
   return (
     <div className="main-sort-container">
-      <div className="top-container">
-        <button onClick={toggleOrder} className="sort-button">
-          {isReversed ? "Oldest" : "Newest"}
-        </button>
-        <SetLimit />
+      <div className="showcase-options">
+        <div className="showcase-options-right">
+          <button onClick={toggleOrder} className="sort-button">
+            {isReversed ? "Oldest" : "Newest"}
+          </button>
+          <TimeRange />
+        </div>
+        <div className="showcase-options-left">
+          <SetLimit />
+        </div>
       </div>
       <div className="year-container">
         {

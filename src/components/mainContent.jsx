@@ -1,4 +1,6 @@
+import GridShowcase from "./examples/gridShowcase";
 import YearSort from "./sortTracksByYear";
+import TopTracks from "./topTracks";
 
 function MainContnent() {
   return (
@@ -8,7 +10,9 @@ function MainContnent() {
         Find out about your top tracks and artists you have listened to this
         year
       </h2>
-      <YearSort />
+      <div style={{ width: "75%", margin: "auto" }}>
+        <GridShowcase />
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { useAuth } from "../../context/auth.context";
 
 function SetLimit() {
   const { setLimit } = useAuth();
-  const [selectedLimit, setSelectedLimit] = useState(null);
+  const [selectedLimit, setSelectedLimit] = useState(25);
   const handleSetLimit = (limit) => {
     setLimit(limit);
     setSelectedLimit(limit);
@@ -11,6 +11,12 @@ function SetLimit() {
 
   return (
     <div className="set-limit">
+      <span
+        className={`limit-btn ${selectedLimit === 50 ? "active" : ""}`}
+        onClick={() => handleSetLimit(50)}
+      >
+        All
+      </span>
       <span
         className={`limit-btn ${selectedLimit === 5 ? "active" : ""}`}
         onClick={() => handleSetLimit(5)}
@@ -28,12 +34,6 @@ function SetLimit() {
         onClick={() => handleSetLimit(25)}
       >
         Top 25
-      </span>
-      <span
-        className={`limit-btn ${selectedLimit === 50 ? "active" : ""}`}
-        onClick={() => handleSetLimit(50)}
-      >
-        Top 50
       </span>
     </div>
   );

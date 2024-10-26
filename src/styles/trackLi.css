@@ -1,7 +1,6 @@
 .list-item {
   width: 100%;
   margin-top: 15px;
-  list-style-type: decimal-leading-zero;
   color: white;
   text-align: center;
 }
@@ -16,10 +15,6 @@ li::marker {
   text-align: left;
 }
 
-img {
-  width: 50px;
-}
-
 .trackLi {
   display: flex;
   justify-content: space-between;
@@ -27,6 +22,10 @@ img {
   width: 100%;
   color: white;
   margin: auto;
+}
+
+.trackLi img {
+  width: 50px;
 }
 
 .trackLi-info {
@@ -37,7 +36,7 @@ img {
 }
 
 .tracks-li-container {
-  width: 75%;
+  width: 100%;
   margin: auto;
   padding-bottom: 200px;
 }
@@ -50,4 +49,27 @@ ol {
   width: 100%;
   margin: auto;
   list-style-type: decimal;
+}
+
+.table-row-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.411);
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.table-row-top span:nth-of-type(2) {
+  text-align: center;
+  margin-left: 25px;
+}
+
+@media screen and (max-width: 1300px) {
+  .hide-item {
+    display: none;
+  }
+
+  .trackLi-info {
+    margin: auto;
+  }
 }
