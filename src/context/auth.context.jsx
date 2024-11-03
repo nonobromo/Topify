@@ -18,7 +18,7 @@ export const userData = createContext({
 
 function UserAuth({ children }) {
   const CLIENT_ID = "476cc57365b648b3bd59a4cf35e96e4f";
-  const REDIRECT_URI = "https://spotify-kf6g.onrender.com";
+  const REDIRECT_URI = "http://localhost:5173/";
 
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";

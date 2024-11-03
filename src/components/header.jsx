@@ -6,7 +6,6 @@ import Logo from "./common/logo";
 
 function Header({ setCurrentView }) {
   const { token, handleLogout, userInfo, HREF_LINK } = useAuth();
-  const { searchTrack } = useSearch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [statisticsIsOpen, setStatisticsIsOpen] = useState(false);
 
@@ -33,7 +32,9 @@ function Header({ setCurrentView }) {
 
         <div className={`navbar-content ${open ? "active" : ""}`}>
           <ul className="nav-statistics">
-            <li>About</li>
+            <NavLink to="/about" className="nav-link">
+              <li>About</li>
+            </NavLink>
             <li>
               <NavLink to="/top-tracks" className="nav-link">
                 Tracks
@@ -105,50 +106,3 @@ export default Header;
 }
 
 // Statistics
-
-// {token && (
-//   <div
-//     onMouseLeave={toggleStatisticsMenu}
-//     onMouseEnter={toggleStatisticsMenu}
-//   >
-//     <span>Statistics</span>
-
-//     <ul
-//       className={`menu nav-links ${statisticsIsOpen ? "open" : ""}`}
-//     >
-//       <NavLink to="/top-tracks">
-//         {" "}
-//         <li onClick={() => setCurrentView("Tracks")}>Tracks</li>
-//       </NavLink>
-//       <NavLink to="/top-artists">
-//         <li onClick={() => setCurrentView("Artists")}>Artists</li>
-//       </NavLink>
-//     </ul>
-//   </div>
-// )}
-
-// User img
-
-{
-  /* <div onMouseEnter={toggleMenu} onMouseLeave={toggleMenu}>
-<img
-  src={userInfo?.images[0].url}
-  className="user-img"
-  alt="Profile"
-/>
-
-<ul className={`menu nav-links ${isMenuOpen ? "open" : ""}`}>
-  <Link to="/">
-    <li>About</li>
-  </Link>
-  <li onClick={handleLogout}>Log out</li>
-</ul>
-</div>
-</>
-) : (
-<a className="" href={HREF_LINK}>
-Login
-</a>
-)}
-</div> */
-}
