@@ -44,7 +44,7 @@ function UserAuth({ children }) {
         .find((elem) => elem.startsWith("access_token"))
         ?.split("=")[1];
 
-      window.location.hash = "";
+      // window.location.hash = "";
       if (token) {
         window.localStorage.setItem("token", token);
         setToken(token);
