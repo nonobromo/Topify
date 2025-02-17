@@ -59,11 +59,11 @@ function Header({ setCurrentView }) {
                 onMouseLeave={toggleMenu}
                 className="img-circle"
               >
-                <img
+                {/* <img
                   src={userInfo?.images[0]?.url}
                   className="user-img"
                   alt="Profile"
-                />
+                /> */}
 
                 <ul className={`menu nav-links ${isMenuOpen ? "open" : ""}`}>
                   <li onClick={handleLogout}>Log out</li>
