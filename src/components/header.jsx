@@ -60,7 +60,7 @@ function Header({ setCurrentView }) {
                 className="img-circle"
               >
                 <img
-                  src={userInfo?.images[0].url}
+                  src={userInfo?.images[0]?.url}
                   className="user-img"
                   alt="Profile"
                 />
